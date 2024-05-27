@@ -47,7 +47,7 @@ jobs:
   - task: Docker@2
     inputs:
       containerRegistry: 'ucrypt_back_DR' 
-      repository: 'harshpate2102/ucrypt_back'
+      repository: 'harshpatel2102/ucrypt_back'
       command: 'buildAndPush'
       Dockerfile: 'crypto-back/Dockerfile'
       tags: 'latest'
@@ -56,7 +56,7 @@ jobs:
   - task: Docker@2
     inputs:
       containerRegistry: 'ucrypt_front_DR' 
-      repository: 'harshpate2102/ucrypt_front'
+      repository: 'harshpatel2102/ucrypt_front'
       command: 'buildAndPush'
       Dockerfile: 'UCryptPortal/Dockerfile'
       tags: 'latest'

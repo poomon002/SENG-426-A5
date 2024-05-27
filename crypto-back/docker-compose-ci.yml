@@ -22,7 +22,7 @@ services:
       - sql-server
 
   frontend:
-    image: harshpate2102/ucrypt_front
+    image: harshpatel2102/ucrypt_front
     restart: always
     ports:
       - "80:80"
@@ -32,7 +32,7 @@ services:
       - ucrypt-app
 
   ucrypt-app:
-    image: harshpate2102/ucrypt_back
+    image: harshpatel2102/ucrypt_back
     restart: always
     ports:
       - "8080:8080"
