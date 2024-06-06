@@ -14,8 +14,8 @@ jobs:
         # Additional properties that will be passed to the scanner,
         # Put one key=value per line, example:
         # sonar.exclusions=**/*.bin
-        sonar.projectKey=ucrypt
-        sonar.projectName=ucrypt
+        sonar.projectKey=SENG426_G01
+        sonar.projectName=SENG426_G01
   - task: Maven@4
     displayName: BackendBuild
     inputs:
