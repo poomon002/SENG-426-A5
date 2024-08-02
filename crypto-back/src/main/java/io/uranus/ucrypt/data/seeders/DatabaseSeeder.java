@@ -11,6 +11,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import io.github.cdimascio.dotenv.Dotenv;
 
 import static io.uranus.ucrypt.data.entities.enums.UserStatus.ACTIVE;
 
@@ -34,6 +35,8 @@ public class DatabaseSeeder {
     }
 
     private void seedMainUsers() {
+        Dotenv dotenv = Dotenv.load();
+
         if(this.userRepository.existsByEmail(this.mainAccEmail)) {
             return;
         }
@@ -56,7 +59,7 @@ public class DatabaseSeeder {
         this.userRepository.save(User.builder()
                 .name("Jeanne Lagasse – Founder & Chairman")
                 .email("jeanne.lagasse@uranus.com")
-                .password(this.passwordEncoder.encode("X#abcRT"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX1")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
@@ -64,7 +67,7 @@ public class DatabaseSeeder {
         this.userRepository.save(User.builder()
                 .name("Ayesha Al Chamy – CEO")
                 .email("ayesha.alchamy@uranus.com")
-                .password(this.passwordEncoder.encode("Oranus$%34"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX2")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
@@ -72,15 +75,15 @@ public class DatabaseSeeder {
         this.userRepository.save(User.builder()
                 .name("Amy Keita – CFO")
                 .email("amy.keita@uranus.com")
-                .password(this.passwordEncoder.encode("L@guna546"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX3")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
-                
+
         this.userRepository.save(User.builder()
                 .name("Kumar Viswanath - CTO")
                 .email("kumar.viswanath@uranus.com")
-                .password(this.passwordEncoder.encode("@lphaG@mma"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX4")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
@@ -88,7 +91,7 @@ public class DatabaseSeeder {
         this.userRepository.save(User.builder()
                 .name("Lin Zhang - SVP of Worldwide Sales")
                 .email("lin.zhang@uranus.com")
-                .password(this.passwordEncoder.encode("BetaW0rld56"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX5")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
@@ -96,7 +99,7 @@ public class DatabaseSeeder {
         this.userRepository.save(User.builder()
                 .name("Ahmad Alezani – VP of Engineering")
                 .email("ahmad.alezani@uranus.com")
-                .password(this.passwordEncoder.encode("tryABX90&"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX6")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
@@ -104,7 +107,7 @@ public class DatabaseSeeder {
         this.userRepository.save(User.builder()
                 .name("Wei Wang – Chief   Information Officer")
                 .email("wei.wang@uranus.com")
-                .password(this.passwordEncoder.encode("poiuytrew"))
+                .password(this.passwordEncoder.encode(dotenv.get("SECRET_FIX7")))
                 .role(employeeRole)
                 .status(ACTIVE)
                 .build());
