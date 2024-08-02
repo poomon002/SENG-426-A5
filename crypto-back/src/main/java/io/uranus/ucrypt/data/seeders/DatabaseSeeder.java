@@ -13,8 +13,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import io.github.cdimascio.dotenv.Dotenv;
 
-import java.io.File;
-
 import static io.uranus.ucrypt.data.entities.enums.UserStatus.ACTIVE;
 
 @Component
