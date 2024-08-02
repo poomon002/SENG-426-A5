@@ -32,7 +32,7 @@ import java.util.Base64;
 public class AesEncryptionHandler implements EncryptionKeyHandler, FileEncryptionHandler, TextEncryptionHandler {
 
     private static final int KEY_SIZE = 256;
-    private static final String ALGORITHM_NAME = "AES/GCM/NoPadding";
+    private static final String ALGORITHM_NAME = "AES";
 
     @Override
     public GenerateEncryptionKeyResponseResource generateEncryptionKey() {

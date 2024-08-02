@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import io.github.cdimascio.dotenv.Dotenv;
 
+import java.io.File;
+
 import static io.uranus.ucrypt.data.entities.enums.UserStatus.ACTIVE;
 
 @Component
@@ -35,7 +37,6 @@ public class DatabaseSeeder {
     }
 
     private void seedMainUsers() {
-        Dotenv dotenv = Dotenv.load();
 
         if(this.userRepository.existsByEmail(this.mainAccEmail)) {
             return;
@@ -55,6 +56,8 @@ public class DatabaseSeeder {
                 .role(adminRole)
                 .status(ACTIVE)
                 .build());
+
+        Dotenv dotenv = Dotenv.load();
 
         this.userRepository.save(User.builder()
                 .name("Jeanne Lagasse – Founder & Chairman")

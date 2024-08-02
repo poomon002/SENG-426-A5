@@ -1,5 +1,5 @@
 ### Secret keys ###
-./env
+#./env
 
 HELP.md
 target/
